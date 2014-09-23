@@ -26,6 +26,35 @@
                izz="1" />
     </inertial>
   </link>
+  
+  <joint name="camera_xtion_joint" type="fixed">
+      <origin xyz="0.53 0 0.36" rpy="0 0 0" /> <!-- 386 + 20 plaque -->
+      <parent link="base_link"/>
+      <child link="camera_xtion_link"/>
+  </joint>
+  
+  <link name="camera_xtion_link" >
+    <visual>    
+      <origin xyz="-0.005 0.09 -0.01" rpy="${pi*0.31} 0 ${-pi/2}" />
+      <geometry>
+        <mesh filename="package://seekur_jr_description/meshes/camera_box.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="Blue"/>
+    </visual>
+      <collision>    
+      <origin xyz="0 0 0" rpy="${pi/2} 0 ${-pi/2}" />
+      <geometry>
+        <mesh filename="package://seekur_jr_description/meshes/camera_box.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="100" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1" ixy="0" ixz="0" 
+	       iyy="1" iyz="0"
+               izz="1" />
+    </inertial>
+  </link>
 
   <joint name="seekur_base_to_top_joint" type="fixed">
       <origin xyz="0 0 0.406" rpy="0 0 0" /> <!-- 386 + 20 plaque -->

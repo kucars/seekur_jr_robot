@@ -8,15 +8,12 @@
     </plugin>
   </gazebo>
 
-
   <!-- base_link -->
   <gazebo reference="base_link">
     <selfCollide>true</selfCollide>
     <gravity>true</gravity>
     <material>Gazebo/Blue</material>
   </gazebo>
-
-
 
   <!-- seekur_base_link -->
   <gazebo reference="seekur_base_link">

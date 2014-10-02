@@ -1,5 +1,5 @@
 <launch>
-	<arg name="model" default="$(find seekur_jr_description)/robots/seekur_jr.urdf.xacro"/>
+	<arg name="model" default="$(find seekur_jr_description)/robots/seekur_jr_with_arm.urdf.xacro"/>
 	<!-- arg name="model" default="$(find seekur_jr_description)/robots/seekur_jr_with_arm.urdf.xacro"/ -->
 	<arg name="gui" default="True" />
 	<param name="use_gui" value="$(arg gui)"/>

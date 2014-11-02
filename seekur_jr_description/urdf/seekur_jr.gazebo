@@ -15,47 +15,4 @@
     <material>Gazebo/Blue</material>
   </gazebo>
 
-  <!-- wheel_link -->
-  <!--<gazebo reference="wheel_link">
-    <selfCollide>true</selfCollide>
-    <gravity>true</gravity>
-    <material>Gazebo/Blue</material>
-  </gazebo>-->
-
-  <!-- shoulder_link 
-  <gazebo reference="shoulder_link">
-    <selfCollide>true</selfCollide>
-    <gravity>true</gravity>
-    <mu1>10.0</mu1>
-    <mu2>10.0</mu2>
-    <material>Gazebo/Orange</material>
-  </gazebo>
-
-   forearm_link 
-  <gazebo reference="forearm_link">
-    <selfCollide>true</selfCollide>
-    <gravity>true</gravity>
-    <mu1>10.0</mu1>
-    <mu2>10.0</mu2>
-    <material>Gazebo/Black</material>
-  </gazebo>
-
-   upper_arm_link 
-  <gazebo reference="upper_arm_link">
-    <selfCollide>true</selfCollide>
-    <gravity>true</gravity>
-    <mu1>10.0</mu1>
-    <mu2>10.0</mu2>
-    <material>Gazebo/Black</material>
-  </gazebo>
-
-  wrist_pitch_link 
-  <gazebo reference="wrist_pitch_link">
-    <selfCollide>true</selfCollide>
-    <gravity>true</gravity>
-    <mu1>0.1</mu1>
-    <mu2>0.1</mu2>
-    <material>Gazebo/Black</material>
-  </gazebo>-->
-
 </robot>

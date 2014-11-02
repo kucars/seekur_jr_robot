@@ -27,13 +27,13 @@
     </inertial>
   </link>
   
-  <joint name="camera_xtion_joint" type="fixed">
+  <joint name="camera_joint" type="fixed">
       <origin xyz="0.53 0 0.36" rpy="0 0 0" /> <!-- 386 + 20 plaque -->
       <parent link="base_link"/>
-      <child link="camera_xtion_link"/>
+      <child link="camera_link"/>
   </joint>
   
-  <link name="camera_xtion_link" >
+  <link name="camera_link" >
     <visual>    
       <origin xyz="-0.005 0.09 -0.01" rpy="${pi*0.31} 0 ${-pi/2}" />
       <geometry>

@@ -6,7 +6,90 @@
     <child link="laser"/>
     <origin xyz="0.55 0 0.23"/>
   </joint>
+ <joint name="camera_joint" type="fixed">
+      <origin xyz="0.53 0 0.36" rpy="0 ${pi*0.123} 0" /> <!-- 386 + 20 plaque -->
+      <parent link="base_link"/>
+      <child link="camera_link"/>
+  </joint>
+  
+  <link name="camera_link" >
+    <visual>    
+      <origin xyz="0.001 0.09 -0.01" rpy="${pi*0.51} 0 ${-pi/2}" />
+      <geometry>
+        <mesh filename="package://seekur_jr_description/meshes/camera_box.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="Blue"/>
+    </visual>
+      <collision>    
+      <origin xyz="0 0 0" rpy="${pi/2} 0 ${-pi/2}" />
+      <geometry>
+        <mesh filename="package://seekur_jr_description/meshes/camera_box.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1" ixy="0" ixz="0" 
+	       iyy="1" iyz="0"
+               izz="1" />
+    </inertial>
+  </link>
+  
+   <joint name="camera_optical_joint" type="fixed">
+      <origin xyz="${cal_xtion_x}           ${cal_xtion_y}         ${cal_xtion_z}"
+                rpy="${-pi/2+cal_xtion_roll} ${0.0+cal_xtion_pitch} ${-pi/2+cal_xtion_yaw}" />
+      <parent link="camera_link"/>
+      <child link="camera_optical_frame"/>
+    </joint>
 
+    <link name="camera_optical_frame"/>
+    
+    <!-- not sure of this part ( arm_base_link .. camera calibration ) -->
+   <!--  
+      <xacro:macro name="xtion_camera_v0" params="name parent *origin">
+    <joint name="${name}_frame_joint" type="fixed">
+      <insert_block name="origin" />
+      <parent link="${parent}"/>
+      <child link="${name}_link"/>
+    </joint>
+    <link name="${name}_link">
+
+      <inertial>
+        <mass value="0.1" />
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia ixx="0.01"  ixy="0.0"  ixz="0.0"
+                 iyy="0.01"  iyz="0.0"
+                 izz="0.01" />
+      </inertial>
+
+      <visual>
+	<origin xyz="0.0 0.012 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://seekur_jr_description/meshes/camera_box.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+      </visual>
+
+      <collision>
+        <origin xyz="0.0 0.012 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://seekur_jr_description/meshes/camera_box.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+      </collision>
+
+    </link>
+
+    <joint name="${name}_optical_joint" type="fixed">
+      <origin xyz="${cal_xtion_x}           ${cal_xtion_y}         ${cal_xtion_z}"
+                rpy="${-M_PI/2+cal_xtion_roll} ${0.0+cal_xtion_pitch} ${-M_PI/2+cal_xtion_yaw}" />
+      <parent link="${name}_link"/>
+      <child link="${name}_optical_frame"/>
+    </joint>
+
+    <link name="${name}_optical_frame"/>
+
+  </xacro:macro>
+  -->
+  
   <link name="laser">
   </link>
 </robot>

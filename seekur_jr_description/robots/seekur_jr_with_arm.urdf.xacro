@@ -21,6 +21,15 @@
     <origin xyz="0.3525 0 0"/> <!-- 0.425/2 + ~0.14 -->
   </joint>
 
+  <property name="cal_xtion_x" value="0.0" />
+  <property name="cal_xtion_y" value="0.0" />
+  <property name="cal_xtion_z" value="0.0" />
+  <property name="cal_xtion_roll" value="0.0" />
+  <property name="cal_xtion_pitch" value="0.0" />
+  <property name="cal_xtion_yaw" value="0.0" />
+  <!-- xacro:xtion_camera_v0 name="camera" parent="arm_base_link" -->
+     <!--origin xyz="0.622392 -0.999073 0.41495" rpy="0.0150779 0.386473 1.57926"/ -->
+  <!-- /xacro:xtion_camera_v0  -->
 
   <xacro:include filename="$(find seekur_jr_description)/urdf/seekur_jr.xacro" />
   <xacro:include filename="$(find seekur_jr_description)/urdf/sensors/sensors.xacro" />

@@ -47,7 +47,7 @@
     <gravity>true</gravity>
     <mu1>10.0</mu1>
     <mu2>10.0</mu2>
-    <material>Gazebo/Black</material>
+    <material>Gazebo/Orange</material>
   </gazebo>
 
   <!-- upper_arm_link -->
@@ -56,7 +56,7 @@
     <gravity>true</gravity>
     <mu1>10.0</mu1>
     <mu2>10.0</mu2>
-    <material>Gazebo/Black</material>
+    <material>Gazebo/Orange</material>
   </gazebo>
 
   <!-- wrist_pitch_link -->
@@ -65,7 +65,7 @@
     <gravity>true</gravity>
     <mu1>0.1</mu1>
     <mu2>0.1</mu2>
-    <material>Gazebo/Black</material>
+    <material>Gazebo/Orange</material>
   </gazebo>
 
   <!-- wrist_roll_link -->
@@ -74,7 +74,7 @@
     <gravity>true</gravity>
     <mu1>0.1</mu1>
     <mu2>0.1</mu2>
-    <material>Gazebo/Black</material>
+    <material>Gazebo/Orange</material>
   </gazebo>
 
 </robot>

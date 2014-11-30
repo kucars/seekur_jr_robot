@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<robot>
+  <!-- ros_control plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>/seekur_jr</robotNamespace>
+    </plugin>
+  </gazebo>
+  <gazebo>
+      <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+        <robotNamespace>/seekur_jr</robotNamespace>
+          <alwaysOn>true</alwaysOn>
+          <updateRate>100.0</updateRate>
+          <leftFrontJoint>joint_f_l_wheel</leftFrontJoint>
+          <rightFrontJoint>joint_f_r_wheel</rightFrontJoint>
+          <leftRearJoint>joint_b_l_wheel</leftRearJoint>
+          <rightRearJoint>joint_b_r_wheel</rightRearJoint>
+          <wheelSeparation>0.425</wheelSeparation>
+          <wheelDiameter>0.386</wheelDiameter>
+          <torque>35</torque>
+          <broadcastTF>1</broadcastTF>
+          <odometryFrame>map</odometryFrame>
+          <commandTopic>cmd_vel</commandTopic>
+          <odometryTopic>odom</odometryTopic>
+          <robotBaseFrame>base_footprint</robotBaseFrame>
+      </plugin>
+  </gazebo>
+  <gazebo reference="joint_f_l_wheel">
+    <mu1 value="1.0"/>
+    <mu2 value="1.0"/>
+    <kp  value="10000000.0" />
+    <kd  value="1.0" />
+    <fdir1 value="1 0 0"/>
+    <material>Gazebo/Grey</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+  <gazebo reference="joint_f_r_wheel">
+      <mu1 value="1.0"/>
+      <mu2 value="1.0"/>
+      <kp  value="10000000.0" />
+      <kd  value="1.0" />
+      <fdir1 value="1 0 0"/>
+      <material>Gazebo/Grey</material>
+      <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+  <gazebo reference="joint_b_l_wheel">
+      <mu1 value="1.0"/>
+      <mu2 value="1.0"/>
+      <kp  value="10000000.0" />
+      <kd  value="1.0" />
+      <fdir1 value="1 0 0"/>
+      <material>Gazebo/Grey</material>
+      <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+  <gazebo reference="joint_b_r_wheel">
+      <mu1 value="1.0"/>
+      <mu2 value="1.0"/>
+      <kp  value="10000000.0" />
+      <kd  value="1.0" />
+      <fdir1 value="1 0 0"/>
+      <material>Gazebo/Grey</material>
+      <turnGravityOff>false</turnGravityOff>
+  </gazebo>  
+  <!-- base_link -->
+  <gazebo reference="base_link">
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  
+  <!-- base_link -->
+  <gazebo reference="seekur_top_link">
+      <selfCollide>true</selfCollide>
+      <gravity>true</gravity>
+      <material>Gazebo/Blue</material>
+  </gazebo>
+  
+  <!-- shoulder_link -->
+  <gazebo reference="shoulder_link">
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+    <mu1>10.0</mu1>
+    <mu2>10.0</mu2>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <!-- forearm_link -->
+  <gazebo reference="forearm_link">
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+    <mu1>10.0</mu1>
+    <mu2>10.0</mu2>
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <!-- upper_arm_link -->
+  <gazebo reference="upper_arm_link">
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+    <mu1>10.0</mu1>
+    <mu2>10.0</mu2>
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <!-- wrist_pitch_link -->
+  <gazebo reference="wrist_pitch_link">
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <!-- wrist_roll_link -->
+  <gazebo reference="wrist_roll_link">
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+</robot>
+ 

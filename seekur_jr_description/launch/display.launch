@@ -1,0 +1,12 @@
+<launch>
+  <arg name="model" default="$(find seekur_jr_description)/urdf/seekur_jr.xacro"/>
+  <arg name="gui" default="True" />
+  <param name="use_gui" value="$(arg gui)"/>
+  <param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+  <!-- publish all the frames to TF -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+    <param name="publish_frequency" value="50"/> <!-- Hz -->
+  </node>	
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find seekur_jr_description)/rviz/urdf.rviz" required="true" />
+</launch>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<robot> 
+  <!-- Laser -->
+  <joint name="base_to_laser" type="fixed">
+    <parent link="base_link"/>
+    <child link="laser"/>
+    <origin xyz="0.55 0 0.23"/>
+  </joint>
+  
+   <link name="laser">
+  </link>  
+  <!--
+  <joint name="camera_joint" type="fixed">
+      <origin xyz="0.148229 0.0529445 -0.0454258" rpy="-0.0173235 0.407733 -0.016268" /> 
+      <parent link="arm_base_link"/>
+      <child link="camera_link"/>
+  </joint>
+  
+  <link name="camera_link" >
+    <visual>    
+      <origin xyz="0.001 0.09 -0.01" rpy="${pi*0.51} 0 ${-pi/2}" />
+      <geometry>
+          <mesh filename="package://seekur_jr_description/meshes/sensors/camera_box.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="Blue"/>
+    </visual>
+      <collision>    
+      <origin xyz="0 0 0" rpy="${pi/2} 0 ${-pi/2}" />
+      <geometry>
+          <mesh filename="package://seekur_jr_description/meshes/sensors/camera_box.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1" ixy="0" ixz="0" 
+	       iyy="1" iyz="0"
+               izz="1" />
+    </inertial>
+  </link>
+  -->
+  <xtion parent="arm_base_link">
+    <origin xyz="${0.148229 + cal_xtion_x} ${0.0529445 + cal_xtion_y} ${-0.0454258 + cal_xtion_z}" rpy="${-0.0173235 + cal_xtion_roll} ${0.407733 +cal_xtion_pitch} ${-0.016268 + cal_xtion_yaw}" />
+  </xtion>
+ 
+</robot>

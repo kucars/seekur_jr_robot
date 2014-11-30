@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<package>
+  <name>seekur_jr_gazebo</name>
+  <version>1.0.0</version>
+  <description>The seekur_jr_gazebo package</description>
+
+  <maintainer email="tarek.taha@gmail.com">Tarek</maintainer>
+  <license>LGPLv3</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <export>
+  </export>
+</package>

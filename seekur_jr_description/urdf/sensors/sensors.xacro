@@ -40,7 +40,7 @@
   </link>
   -->
   <xtion parent="arm_base_link">
-    <origin xyz="${0.148229 + cal_xtion_x} ${0.0529445 + cal_xtion_y} ${-0.0454258 + cal_xtion_z}" rpy="${-0.0173235 + cal_xtion_roll} ${0.407733 +cal_xtion_pitch} ${-0.016268 + cal_xtion_yaw}" />
+    <origin xyz="${0.148229 + cal_xtion_x} ${0.0529445/2.0 + cal_xtion_y} ${-0.0454258 + cal_xtion_z}" rpy="${-0.0173235 + cal_xtion_roll} ${0.407733 +cal_xtion_pitch} ${-0.016268 + cal_xtion_yaw}" />
   </xtion>
  
 </robot>

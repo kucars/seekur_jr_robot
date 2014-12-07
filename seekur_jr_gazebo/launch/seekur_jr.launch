@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <launch>
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
@@ -26,7 +27,7 @@
 
   <!-- load the controllers -->
    <!-- load the controllers -->
-  <node name="labrob_controller" pkg="controller_manager" type="spawner" output="screen" ns="seekur_jr" args="joint_state_controller terabot_arm_trajectory_controller" />
+  <node name="seekur_jr_controller" pkg="controller_manager" type="spawner" output="screen" ns="seekur_jr" args="joint_state_controller terabot_arm_trajectory_controller" />
   
   <!-- node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/seekur_jr" args="joint_state_controller shoulder_joint_position_controller forearm_joint_position_controller upper_arm_joint_position_controller wrist_pitch_joint_position_controller wrist_roll_joint_position_controller"/--> 
   <!--gripper_r_finger_joint_position_controller gripper_l_finger_joint_position_controller"/-->

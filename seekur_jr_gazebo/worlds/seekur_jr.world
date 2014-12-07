@@ -1,6 +1,76 @@
 <?xml version="1.0" ?>
 <sdf version="1.4">
   <world name="default">
+    <model name='coke_can'>
+      <link name='link'>
+        <inertial>
+          <pose>-0.01 -0.012 0.15 0 -0 0</pose>
+          <mass>0.39</mass>
+          <inertia>
+            <ixx>0.00058</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00058</iyy>
+            <iyz>0</iyz>
+            <izz>0.00019</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.5 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/tataha/workspace/kuri_catkin_ws/src/mitsubishi_arm/mitsubishi_arm_gazebo/worlds/coke_can.dae</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+07</kp>
+                <kd>1</kd>
+                <min_depth>0.001</min_depth>
+                <max_vel>0.1</max_vel>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0.5 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/tataha/workspace/kuri_catkin_ws/src/mitsubishi_arm/mitsubishi_arm_gazebo/worlds/coke_can.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>0.588889 0 0 0 -0 0</pose>
+      <static>0</static>
+    </model>
+    <state world_name='default'>
+    <model name='coke_can'>
+      <pose>2.0 0.0 0 0 0 0</pose>
+      <link name='link'>
+        <pose>2.0 0.0 0 0 0 0</pose>
+        <velocity>0 0 0 0 -0 0</velocity>
+        <acceleration>0 0 0 0 -0 0</acceleration>
+        <wrench>0 0 0 0 -0 0</wrench>
+      </link>
+    </model>
+    </state>
     <include>
       <uri>model://ground_plane</uri>
     </include>
@@ -10,7 +80,7 @@
     <include>
       <uri>model://gas_station</uri>
       <name>gas_station</name>
-      <pose>-2.0 7.0 0 0 0 0</pose>
+      <pose>-2.0 7 0 0 0 0</pose>
     </include>
   </world>
 </sdf>

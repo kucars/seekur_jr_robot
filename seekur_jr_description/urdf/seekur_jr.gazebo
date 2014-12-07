@@ -22,8 +22,8 @@
           <odometryFrame>map</odometryFrame>
           <commandTopic>cmd_vel</commandTopic>
           <odometryTopic>odom</odometryTopic>
-          <robotBaseFrame>base_footprint</robotBaseFrame>
-      </plugin>
+          <robotBaseFrame>base_link</robotBaseFrame>
+      </plugin>1
   </gazebo>
   <gazebo reference="joint_f_l_wheel">
     <mu1 value="1.0"/>
@@ -90,7 +90,7 @@
     <gravity>true</gravity>
     <mu1>10.0</mu1>
     <mu2>10.0</mu2>
-    <material>Gazebo/Black</material>
+    <material>Gazebo/Orange</material>
   </gazebo>
 
   <!-- upper_arm_link -->
@@ -108,7 +108,7 @@
     <gravity>true</gravity>
     <mu1>0.1</mu1>
     <mu2>0.1</mu2>
-    <material>Gazebo/Black</material>
+    <material>Gazebo/Orange</material>
   </gazebo>
 
   <!-- wrist_roll_link -->
@@ -117,7 +117,7 @@
     <gravity>true</gravity>
     <mu1>0.1</mu1>
     <mu2>0.1</mu2>
-    <material>Gazebo/Black</material>
+    <material>Gazebo/Orange</material>
   </gazebo>
 
 </robot>

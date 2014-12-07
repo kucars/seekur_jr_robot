@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<launch>
+
+   <arg name="simulation" default="true" />
+
+   <group if="$(arg simulation)">
+  	<!-- Load mitsubishi arm hardware interface and controller manager -->
+       <include file="$(find seekur_jr_gazebo)/launch/seekur_jr.launch"/>
+  	<!-- Given the published joint states, publish tf for the robot links -->
+       <include file="$(find seekur_jr_moveit_config)/launch/move_group.launch">
+         <arg name="publish_monitored_planning_scene" value="true" />
+       </include>
+   </group>
+   <group unless="$(arg simulation)">
+  	<!-- Load mitsubishi arm hardware interface and controller manager -->
+  	<include file="$(find terabot_arm_hardware_interface)/launch/terabot_arm_hardware_interface.launch"/>
+    <!-- Load arm controllers -->
+    <include file="$(find terabot_control)/launch/terabot_control.launch"/>
+    <include file="$(find seekur_jr_moveit_config)/launch/moveit.launch"/>
+   </group>
+
+   <!-- Run Rviz and load the default config to see the state of the move_group node -->
+   <include file="$(find seekur_jr_moveit_config)/launch/moveit_rviz.launch">
+     <arg name="config" value="true"/>
+   </include>
+ 
+</launch>

@@ -42,8 +42,8 @@ seekur_jr:
       - upper_arm_joint
       - wrist_pitch_joint
       - wrist_roll_joint
-#       - gripper_l_finger_joint
-#       - gripper_r_finger_joint
+#      - gripper_l_finger_joint
+#      - gripper_r_finger_joint
       
     state_publish_rate: 20.0
     action_monitor_rate: 20.0
@@ -59,9 +59,9 @@ seekur_jr:
         trajectory: -1.0
       wrist_roll_joint:
         trajectory: -1.0
-#       gripper_l_finger_joint:
-#         trajectory: -1.0
-#       gripper_r_finger_joint:
-#         trajectory: -1.0
+#      gripper_l_finger_joint:
+#        trajectory: -1.0
+#      gripper_r_finger_joint:
+#        trajectory: -1.0
       
       

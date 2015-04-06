@@ -21,8 +21,9 @@
     <inertial>
       <mass value="100" />
       <origin xyz="0 0 0" rpy="0 0 0"/>
+      <!-- KDL Does not support root link with inertia -->
       <inertia ixx="1" ixy="0" ixz="0" 
-	       iyy="1" iyz="0"
+	           iyy="1" iyz="0"
                izz="1" />
     </inertial>
   </link>

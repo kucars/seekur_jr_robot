@@ -23,7 +23,7 @@
           <commandTopic>cmd_vel</commandTopic>
           <odometryTopic>odom</odometryTopic>
           <robotBaseFrame>base_link</robotBaseFrame>
-      </plugin>1
+      </plugin>
   </gazebo>
   <gazebo reference="joint_f_l_wheel">
     <mu1 value="1.0"/>
